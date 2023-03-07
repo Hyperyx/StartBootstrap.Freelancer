@@ -4,8 +4,8 @@ import React from "react";
 function Scripts() {
   return (
     <>
-      <Script src="/assets/js/fontawesome.js" />
-      <Script src="/assets/js/bootstrap.bundle.min.js" />
+      <Script src="$transform-base()/assets/js/fontawesome.js" />
+      <Script src="$transform-base()/assets/js/bootstrap.bundle.min.js" />
     </>
   );
 }
