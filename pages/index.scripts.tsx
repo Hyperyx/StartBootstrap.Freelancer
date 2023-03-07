@@ -1,2 +1,2 @@
-<Script src="{{ basePath }}/assets/js/fontawesome.js" />
-<Script src="{{ basePath }}/assets/js/bootstrap.bundle.min.js" />
+<Script src="$transform-base()/assets/js/fontawesome.js" />
+<Script src="$transform-base()/assets/js/bootstrap.bundle.min.js" />
