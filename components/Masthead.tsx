@@ -12,7 +12,7 @@ class Masthead extends Component<Content> {
         <div className="container d-flex align-items-center flex-column">
           <img
             className="masthead-avatar mb-5"
-            src="$transform-base()/assets/img/avataaars.svg"
+            src="{{ basePath }}/assets/img/avataaars.svg"
             alt="..."
           />
           <h1
