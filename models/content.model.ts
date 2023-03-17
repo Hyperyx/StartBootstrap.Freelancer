@@ -7,7 +7,7 @@ export default class Content {
   about?: About;
   contact?: Contact;
   footer?: Footer;
-  copyright?: ContentField<string>;
+  copyright?: Copyright;
 }
 
 class FooterItem {
@@ -69,6 +69,10 @@ class Menu {
 class MenuItem {
   title?: ContentField<string>;
   url?: ContentField<string>;
+}
+
+class Copyright {
+  title?: ContentField<string>;
 }
 
 class ContentField<T> {

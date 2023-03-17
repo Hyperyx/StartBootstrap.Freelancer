@@ -11,10 +11,10 @@ class Copyright extends Component<Content> {
         <div className="container">
           <small
             data-field-key={
-              this.props.editMode ? this.props.copyright?.key : null
+              this.props.editMode ? this.props.copyright?.title?.key : null
             }
             dangerouslySetInnerHTML={{
-              __html: this.props.copyright?.value ?? "",
+              __html: this.props.copyright?.title?.value ?? "",
             }}
           ></small>
         </div>
