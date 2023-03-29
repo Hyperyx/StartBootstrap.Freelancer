@@ -1,4 +1,4 @@
-import { Component, ReactNode } from "react";
+import React, { Component, ReactNode } from "react";
 import Content from "../models/content.model";
 
 class Copyright extends Component<Content> {

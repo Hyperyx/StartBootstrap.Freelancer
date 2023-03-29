@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from "react";
 import Content from "../models/content.model";
 
 function Meta(props: Content) {

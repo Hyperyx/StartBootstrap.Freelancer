@@ -1,4 +1,4 @@
-import { Component, ReactNode } from "react";
+import React, { Component, ReactNode } from "react";
 import Content from "../models/content.model";
 
 class Portfolio extends Component<Content> {
@@ -39,7 +39,7 @@ class Portfolio extends Component<Content> {
                 </div>
                 <img
                   className="img-fluid"
-                  src="assets/img/portfolio/cabin.png"
+                  src="$transform-base()/assets/img/portfolio/cabin.png"
                   alt="..."
                 />
               </div>
@@ -57,7 +57,7 @@ class Portfolio extends Component<Content> {
                 </div>
                 <img
                   className="img-fluid"
-                  src="assets/img/portfolio/cake.png"
+                  src="$transform-base()/assets/img/portfolio/cake.png"
                   alt="..."
                 />
               </div>
@@ -75,7 +75,7 @@ class Portfolio extends Component<Content> {
                 </div>
                 <img
                   className="img-fluid"
-                  src="assets/img/portfolio/circus.png"
+                  src="$transform-base()/assets/img/portfolio/circus.png"
                   alt="..."
                 />
               </div>
@@ -93,7 +93,7 @@ class Portfolio extends Component<Content> {
                 </div>
                 <img
                   className="img-fluid"
-                  src="assets/img/portfolio/game.png"
+                  src="$transform-base()/assets/img/portfolio/game.png"
                   alt="..."
                 />
               </div>
@@ -111,7 +111,7 @@ class Portfolio extends Component<Content> {
                 </div>
                 <img
                   className="img-fluid"
-                  src="assets/img/portfolio/safe.png"
+                  src="$transform-base()/assets/img/portfolio/safe.png"
                   alt="..."
                 />
               </div>
@@ -129,7 +129,7 @@ class Portfolio extends Component<Content> {
                 </div>
                 <img
                   className="img-fluid"
-                  src="assets/img/portfolio/submarine.png"
+                  src="$transform-base()/assets/img/portfolio/submarine.png"
                   alt="..."
                 />
               </div>

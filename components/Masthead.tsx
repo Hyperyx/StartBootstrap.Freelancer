@@ -1,4 +1,4 @@
-import { Component, ReactNode } from "react";
+import React, { Component, ReactNode } from "react";
 import Content from "../models/content.model";
 
 class Masthead extends Component<Content> {
@@ -12,7 +12,7 @@ class Masthead extends Component<Content> {
         <div className="container d-flex align-items-center flex-column">
           <img
             className="masthead-avatar mb-5"
-            src="assets/img/avataaars.svg"
+            src="$transform-base()/assets/img/avataaars.svg"
             alt="..."
           />
           <h1
