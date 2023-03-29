@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import { Component, ReactNode } from "react";
 import Content from "../models/content.model";
 
 class Masthead extends Component<Content> {
@@ -12,7 +12,7 @@ class Masthead extends Component<Content> {
         <div className="container d-flex align-items-center flex-column">
           <img
             className="masthead-avatar mb-5"
-            src="$transform-base()/assets/img/avataaars.svg"
+            src="assets/img/avataaars.svg"
             alt="..."
           />
           <h1
@@ -33,7 +33,7 @@ class Masthead extends Component<Content> {
           </div>
           <p className="masthead-subheading font-weight-light mb-0">
             {this.props.mast?.professions?.map((profession, i) => (
-              <>
+              <span key={i}>
                 <span
                   data-field-key={
                     this.props.editMode ? profession?.title?.key : null
@@ -45,7 +45,7 @@ class Masthead extends Component<Content> {
                 {i + 1 < this.props.mast!.professions!.length ? (
                   <span> - </span>
                 ) : null}
-              </>
+              </span>
             ))}
           </p>
         </div>

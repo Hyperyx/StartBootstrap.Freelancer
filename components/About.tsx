@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import { Component, ReactNode } from "react";
 import Content from "../models/content.model";
 
 class About extends Component<Content> {
@@ -32,21 +32,21 @@ class About extends Component<Content> {
           </div>
           <div className="row">
             {this.props.about?.columns?.map((column, i) => (
-              <>
+              <div
+                key={i}
+                className={"col-lg-4 " + (i === 0 ? "ms-auto" : "me-auto")}
+              >
                 <div
-                  className={"col-lg-4 " + (i === 0 ? "ms-auto" : "me-auto")}
-                >
-                  <p
-                    className="lead"
-                    data-field-key={
-                      this.props.editMode ? column?.text?.key : null
-                    }
-                    dangerouslySetInnerHTML={{
-                      __html: column?.text?.value ?? "",
-                    }}
-                  ></p>
-                </div>
-              </>
+                  key={i}
+                  className="lead"
+                  data-field-key={
+                    this.props.editMode ? column?.text?.key : null
+                  }
+                  dangerouslySetInnerHTML={{
+                    __html: column?.text?.value ?? "",
+                  }}
+                ></div>
+              </div>
             ))}
           </div>
           <div className="text-center mt-4">

@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import { Component, ReactNode } from "react";
 import Content from "../models/content.model";
 
 class Footer extends Component<Content> {
@@ -12,6 +12,7 @@ class Footer extends Component<Content> {
           <div className="row">
             {this.props.footer?.columns?.map((column, i) => (
               <div
+                key={i}
                 className={
                   "col-lg-4 " +
                   (i !== this.props.footer!.columns!.length - 1
@@ -29,7 +30,7 @@ class Footer extends Component<Content> {
                   }}
                 ></h4>
                 {column?.text ? (
-                  <p
+                  <div
                     className="lead mb-0"
                     data-field-key={
                       this.props.editMode ? column?.text?.key : null
@@ -37,7 +38,7 @@ class Footer extends Component<Content> {
                     dangerouslySetInnerHTML={{
                       __html: column?.text?.value ?? "",
                     }}
-                  ></p>
+                  ></div>
                 ) : column?.actions && column?.actions.length > 0 ? (
                   column.actions.map((action, i) => (
                     <a

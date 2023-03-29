@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import { Component, ReactNode } from "react";
 import Content from "../models/content.model";
 
 class Navigation extends Component<Content> {
@@ -70,8 +70,8 @@ class Navigation extends Component<Content> {
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ms-auto">
-                {this.props.nav?.menu?.items?.map((menuItem) => (
-                  <li className="nav-item mx-0 mx-lg-1">
+                {this.props.nav?.menu?.items?.map((menuItem, i) => (
+                  <li className="nav-item mx-0 mx-lg-1" key={i}>
                     <a
                       className="nav-link py-3 px-0 px-lg-3 rounded"
                       href={menuItem?.url?.value}
