@@ -41,6 +41,7 @@ class About {
 
 class Portfolio {
   title?: ContentField<string>;
+  gallery?: ContentField<string[]>;
 }
 
 class Meta {

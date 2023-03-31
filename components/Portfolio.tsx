@@ -26,114 +26,18 @@ class Portfolio extends Component<Content> {
             <div className="divider-custom-line"></div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-md-6 col-lg-4 mb-5">
-              <div
-                className="portfolio-item mx-auto"
-                data-bs-toggle="modal"
-                data-bs-target="#portfolioModal1"
-              >
-                <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                  <div className="portfolio-item-caption-content text-center text-white">
-                    <i className="fas fa-arrow-up-right-from-square fa-3x"></i>
+            {this.props.portfolio?.gallery?.value?.map((url, i) => (
+              <div className="col-md-6 col-lg-4 mb-5" key={i}>
+                <div className="portfolio-item mx-auto">
+                  <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div className="portfolio-item-caption-content text-center text-white">
+                      <i className="fas fa-arrow-up-right-from-square fa-3x"></i>
+                    </div>
                   </div>
+                  <img className="img-fluid" src={url} alt="..." />
                 </div>
-                <img
-                  className="img-fluid"
-                  src="$transform-base()/assets/img/portfolio/cabin.png"
-                  alt="..."
-                />
               </div>
-            </div>
-            <div className="col-md-6 col-lg-4 mb-5">
-              <div
-                className="portfolio-item mx-auto"
-                data-bs-toggle="modal"
-                data-bs-target="#portfolioModal2"
-              >
-                <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                  <div className="portfolio-item-caption-content text-center text-white">
-                    <i className="fas fa-arrow-up-right-from-square fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  className="img-fluid"
-                  src="$transform-base()/assets/img/portfolio/cake.png"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4 mb-5">
-              <div
-                className="portfolio-item mx-auto"
-                data-bs-toggle="modal"
-                data-bs-target="#portfolioModal3"
-              >
-                <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                  <div className="portfolio-item-caption-content text-center text-white">
-                    <i className="fas fa-arrow-up-right-from-square fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  className="img-fluid"
-                  src="$transform-base()/assets/img/portfolio/circus.png"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4 mb-5 mb-lg-0">
-              <div
-                className="portfolio-item mx-auto"
-                data-bs-toggle="modal"
-                data-bs-target="#portfolioModal4"
-              >
-                <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                  <div className="portfolio-item-caption-content text-center text-white">
-                    <i className="fas fa-arrow-up-right-from-square fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  className="img-fluid"
-                  src="$transform-base()/assets/img/portfolio/game.png"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4 mb-5 mb-md-0">
-              <div
-                className="portfolio-item mx-auto"
-                data-bs-toggle="modal"
-                data-bs-target="#portfolioModal5"
-              >
-                <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                  <div className="portfolio-item-caption-content text-center text-white">
-                    <i className="fas fa-arrow-up-right-from-square fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  className="img-fluid"
-                  src="$transform-base()/assets/img/portfolio/safe.png"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <div
-                className="portfolio-item mx-auto"
-                data-bs-toggle="modal"
-                data-bs-target="#portfolioModal6"
-              >
-                <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                  <div className="portfolio-item-caption-content text-center text-white">
-                    <i className="fas fa-arrow-up-right-from-square fa-3x"></i>
-                  </div>
-                </div>
-                <img
-                  className="img-fluid"
-                  src="$transform-base()/assets/img/portfolio/submarine.png"
-                  alt="..."
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
