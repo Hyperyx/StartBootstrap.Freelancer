@@ -49,6 +49,7 @@ class Meta {
 
 class Mast {
   title?: ContentField<string>;
+  avatar?: ContentField<string>;
   professions?: Profession[];
 }
 
