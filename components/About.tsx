@@ -1,8 +1,10 @@
-import React, { Component, ReactNode } from "react";
-import Content from "../models/content.model";
+import { Component, ReactNode } from "react";
+import AboutProps from "./about.props";
+import AboutFireflyProps from "./about.props";
+import React from "react";
 
-class About extends Component<Content> {
-  constructor(props: Content) {
+class About extends Component<AboutProps> {
+  constructor(props: AboutFireflyProps) {
     super(props);
   }
   onClick = (e: any) => {
@@ -17,10 +19,10 @@ class About extends Component<Content> {
           <h2
             className="page-section-heading text-center text-uppercase text-white"
             data-field-key={
-              this.props.editMode ? this.props.about?.title?.key : null
+              this.props.editMode ? this.props.content?.title?.key : null
             }
             dangerouslySetInnerHTML={{
-              __html: this.props.about?.title?.value ?? "",
+              __html: this.props.content?.title?.value ?? "",
             }}
           ></h2>
           <div className="divider-custom divider-light">
@@ -31,7 +33,7 @@ class About extends Component<Content> {
             <div className="divider-custom-line"></div>
           </div>
           <div className="row">
-            {this.props.about?.columns?.map((column, i) => (
+            {this.props.content?.columns?.map((column, i) => (
               <div
                 key={i}
                 className={"col-lg-4 " + (i === 0 ? "ms-auto" : "me-auto")}
@@ -57,9 +59,9 @@ class About extends Component<Content> {
             >
               <i className="fas fa-comment me-2"></i>
               <span
-                data-field-key={this.props.about?.callToAction?.key}
+                data-field-key={this.props.content?.callToAction?.key}
                 dangerouslySetInnerHTML={{
-                  __html: this.props.about?.callToAction?.value ?? "",
+                  __html: this.props.content?.callToAction?.value ?? "",
                 }}
               ></span>
             </a>

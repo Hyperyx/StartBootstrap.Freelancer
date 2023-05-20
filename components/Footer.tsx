@@ -1,8 +1,9 @@
-import React, { Component, ReactNode } from "react";
-import Content from "../models/content.model";
+import { Component, ReactNode } from "react";
+import FooterFireflyProps from "./footer.props";
+import React from "react";
 
-class Footer extends Component<Content> {
-  constructor(props: Content) {
+class Footer extends Component<FooterFireflyProps> {
+  constructor(props: FooterFireflyProps) {
     super(props);
   }
   render(): ReactNode {
@@ -10,12 +11,12 @@ class Footer extends Component<Content> {
       <footer className="footer text-center">
         <div className="container">
           <div className="row">
-            {this.props.footer?.columns?.map((column, i) => (
+            {this.props.content!.columns?.map((column, i) => (
               <div
                 key={i}
                 className={
                   "col-lg-4 " +
-                  (i !== this.props.footer!.columns!.length - 1
+                  (i !== this.props.content!.columns!.length - 1
                     ? "mb-5 mb-lg-0"
                     : "")
                 }

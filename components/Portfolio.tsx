@@ -1,8 +1,9 @@
-import React, { Component, ReactNode } from "react";
-import Content from "../models/content.model";
+import { Component, ReactNode } from "react";
+import PortfolioFireflyProps from "./portfolio.props";
+import React from "react";
 
-class Portfolio extends Component<Content> {
-  constructor(props: Content) {
+class Portfolio extends Component<PortfolioFireflyProps> {
+  constructor(props: PortfolioFireflyProps) {
     super(props);
   }
   render(): ReactNode {
@@ -12,10 +13,10 @@ class Portfolio extends Component<Content> {
           <h2
             className="page-section-heading text-center text-uppercase text-secondary mb-0"
             data-field-key={
-              this.props.editMode ? this.props.portfolio?.title?.key : null
+              this.props.editMode ? this.props.content?.title?.key : null
             }
             dangerouslySetInnerHTML={{
-              __html: this.props.portfolio?.title?.value ?? "",
+              __html: this.props.content?.title?.value ?? "",
             }}
           ></h2>
           <div className="divider-custom">
@@ -26,7 +27,7 @@ class Portfolio extends Component<Content> {
             <div className="divider-custom-line"></div>
           </div>
           <div className="row justify-content-center">
-            {this.props.portfolio?.gallery?.value?.map((url, i) => (
+            {this.props.content?.gallery?.value?.map((url, i) => (
               <div className="col-md-6 col-lg-4 mb-5" key={i}>
                 <div className="portfolio-item mx-auto">
                   <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">

@@ -1,8 +1,10 @@
-import React, { Component, ReactNode } from "react";
-import Content from "../models/content.model";
+import { Component, ReactNode } from "react";
+import NavigationFireflyProps from "./navigation.props";
+import Link from "next/link";
+import React from "react";
 
-class Navigation extends Component<Content> {
-  constructor(props: Content) {
+class Navigation extends Component<NavigationFireflyProps> {
+  constructor(props: NavigationFireflyProps) {
     super(props);
   }
   componentDidMount() {
@@ -43,10 +45,10 @@ class Navigation extends Component<Content> {
               href="#page-top"
               onClick={this.onClick}
               data-field-key={
-                this.props.editMode ? this.props.nav?.title?.key : null
+                this.props.editMode ? this.props.content?.title?.key : null
               }
               dangerouslySetInnerHTML={{
-                __html: this.props.nav?.title?.value ?? "",
+                __html: this.props.content?.title?.value ?? "",
               }}
             ></a>
             <button
@@ -60,26 +62,29 @@ class Navigation extends Component<Content> {
             >
               <span
                 data-field-key={
-                  this.props.editMode ? this.props.nav?.menu?.title?.key : null
+                  this.props.editMode
+                    ? this.props.content?.menu?.title?.key
+                    : null
                 }
                 dangerouslySetInnerHTML={{
-                  __html: this.props.nav?.menu?.title?.value ?? "",
+                  __html: this.props.content?.menu?.title?.value ?? "",
                 }}
               ></span>
               <i className="fas fa-bars"></i>
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ms-auto">
-                {this.props.nav?.menu?.items?.map((menuItem, i) => (
+                {this.props.content?.menu?.items?.map((menuItem, i) => (
                   <li className="nav-item mx-0 mx-lg-1" key={i}>
-                    <a
+                    <a></a>
+                    <Link
                       className="nav-link py-3 px-0 px-lg-3 rounded"
-                      href={menuItem?.url?.value}
+                      href={menuItem?.url?.value ?? ""}
                       data-field-key={menuItem?.title?.key}
                       dangerouslySetInnerHTML={{
                         __html: menuItem?.title?.value ?? "",
                       }}
-                    ></a>
+                    ></Link>
                   </li>
                 ))}
               </ul>

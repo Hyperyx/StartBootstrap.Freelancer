@@ -1,8 +1,8 @@
 import Head from "next/head";
+import MetaFireflyProps from "./meta.props";
 import React from "react";
-import Content from "../models/content.model";
 
-function Meta(props: Content) {
+function Meta(props: MetaFireflyProps) {
   return (
     <Head>
       <meta charSet="utf-8" />
@@ -12,7 +12,7 @@ function Meta(props: Content) {
       />
       <meta name="description" content="" />
       <meta name="author" content="" />
-      <title>{props.meta?.title?.value}</title>
+      <title>{props.content?.title?.value}</title>
     </Head>
   );
 }

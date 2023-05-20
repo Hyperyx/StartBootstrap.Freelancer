@@ -1,8 +1,9 @@
-import React, { Component, ReactNode } from "react";
-import Content from "../models/content.model";
+import { Component, ReactNode } from "react";
+import MastFireflyProps from "./masthead.props";
+import React from "react";
 
-class Masthead extends Component<Content> {
-  constructor(props: Content) {
+class Masthead extends Component<MastFireflyProps> {
+  constructor(props: MastFireflyProps) {
     super(props);
   }
 
@@ -12,16 +13,16 @@ class Masthead extends Component<Content> {
         <div className="container d-flex align-items-center flex-column">
           <img
             className="masthead-avatar mb-5"
-            src={this.props?.mast?.avatar?.value}
+            src={this.props?.content?.avatar?.value}
             alt="..."
           />
           <h1
             className="masthead-heading text-uppercase mb-0"
             data-field-key={
-              this.props.editMode ? this.props.mast?.title?.key : null
+              this.props.editMode ? this.props.content?.title?.key : null
             }
             dangerouslySetInnerHTML={{
-              __html: this.props.mast?.title?.value ?? "",
+              __html: this.props.content?.title?.value ?? "",
             }}
           ></h1>
           <div className="divider-custom divider-light">
@@ -32,7 +33,7 @@ class Masthead extends Component<Content> {
             <div className="divider-custom-line"></div>
           </div>
           <p className="masthead-subheading font-weight-light mb-0">
-            {this.props.mast?.professions?.map((profession, i) => (
+            {this.props.content?.professions?.map((profession, i) => (
               <span key={i}>
                 <span
                   data-field-key={
@@ -42,7 +43,7 @@ class Masthead extends Component<Content> {
                     __html: profession?.title?.value ?? "",
                   }}
                 ></span>
-                {i + 1 < this.props.mast!.professions!.length ? (
+                {i + 1 < this.props.content!.professions!.length ? (
                   <span> - </span>
                 ) : null}
               </span>

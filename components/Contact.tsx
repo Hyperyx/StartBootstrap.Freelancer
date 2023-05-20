@@ -1,8 +1,9 @@
-import React, { Component, ReactNode } from "react";
-import Content from "../models/content.model";
+import { Component, ReactNode } from "react";
+import ContactFireflyProps from "./contact.props";
+import React from "react";
 
-class Contact extends Component<Content> {
-  constructor(props: Content) {
+class Contact extends Component<ContactFireflyProps> {
+  constructor(props: ContactFireflyProps) {
     super(props);
   }
   onClick = (e: any) => {
@@ -17,10 +18,10 @@ class Contact extends Component<Content> {
           <h2
             className="page-section-heading text-center text-uppercase text-secondary mb-0"
             data-field-key={
-              this.props.editMode ? this.props.contact?.title?.key : null
+              this.props.editMode ? this.props.content?.title?.key : null
             }
             dangerouslySetInnerHTML={{
-              __html: this.props.contact?.title?.value ?? "",
+              __html: this.props.content?.title?.value ?? "",
             }}
           ></h2>
           <div className="divider-custom">
@@ -126,10 +127,10 @@ class Contact extends Component<Content> {
                 >
                   <span
                     data-field-key={
-                      this.props.editMode ? this.props.contact?.send?.key : null
+                      this.props.editMode ? this.props.content?.send?.key : null
                     }
                     dangerouslySetInnerHTML={{
-                      __html: this.props.contact?.send?.value ?? "",
+                      __html: this.props.content?.send?.value ?? "",
                     }}
                   ></span>
                 </button>
